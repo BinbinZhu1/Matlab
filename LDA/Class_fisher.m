@@ -123,7 +123,7 @@ for k = nonemptygroups
 %     E = E + Rk'*Rk;    % 计算总的组内离差平方和矩阵E
     for j=1:gsize(k)
         Train=Training(gindex==k,:);
-        E=E+(Training(j)-gmeans(k,:))'*(Training(j)-gmeans(k,:));
+        E=E+(Train(j,:)-gmeans(k,:))'*(Train(j,:)-gmeans(k,:));
     end
     % 计算组间离差平方和矩阵B
     B = B + (gmeans(k,:) - totalmean)'*(gmeans(k,:) - totalmean)*gsize(k);
